@@ -1,0 +1,22 @@
+//
+//  PrefixHeader.pch
+//  PC Controller
+//
+//  Created by iOS-aFei on 16/9/1.
+//  Copyright © 2016年 iOS-aFei. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define kWindowHeight [UIScreen mainScreen].bounds.size.height
+#define kWindowWidth  [UIScreen mainScreen].bounds.size.width
+
+// tabBar 高度
+#define kTabBarHeight   49.0f
+// 导航栏高度
+#define kNavigatHeight  64.f
+
+#define kMainColor      [UIColor colorWithRed:143/255.0 green:220/255.0 blue:212/255.0 alpha:1.0]
+
+#endif /* PrefixHeader_pch */
