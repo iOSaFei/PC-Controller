@@ -10,6 +10,7 @@
 #import "WFControlController.h"
 #import "WFDocumentController.h"
 #import "WFMyController.h"
+#import "SVProgressHUD.h"
 
 @interface WFTabbarController ()
 
@@ -22,6 +23,9 @@
     self.tabBar.barTintColor = kMainColor;
     self.tabBar.tintColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor whiteColor];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];  //设置HUD的Style
+    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];   //设置HUD和文本的颜色
+    [SVProgressHUD setBackgroundColor:kMainColor];             //设置HUD的背景颜色
     [self addController];
 }
 - (void)addController{

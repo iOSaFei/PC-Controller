@@ -62,6 +62,7 @@
         self.frame = _frame;
     }];
 }
+#pragma -mark collectionDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _tittleArray.count;
 };
@@ -72,7 +73,7 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PowerCollectionViewCell" forIndexPath:indexPath];
     cell.backgroundColor = kMainColor;
 
-    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:CGRectMake((width - 40)/2, 0, 40, 40)];
+    UIImageView *myImageView = [[UIImageView alloc] initWithFrame:CGRectMake((width - 40)/2, 0, 30, 30)];
     myImageView.image = [UIImage imageNamed:_tittleArray[indexPath.row]];
     [cell.contentView addSubview:myImageView];
     
@@ -96,7 +97,7 @@
     return YES;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%ld", (long)indexPath.row);
+    self.ppdidSelectItem(indexPath.row);
 }
 
 @end

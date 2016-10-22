@@ -19,4 +19,17 @@
 
 #define kMainColor      [UIColor colorWithRed:143/255.0 green:220/255.0 blue:212/255.0 alpha:1.0]
 
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+#ifdef DEBUG
+
+#define NNSLog(FORMAT, ...) fprintf(stderr,"%s\n",[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+
+#else
+
+#define NNSLog(...)
+
+#endif
+
+
 #endif /* PrefixHeader_pch */

@@ -12,12 +12,15 @@
 {
     NSArray *_cellTextArray;
 }
+
+#pragma mark - override
 - (void)viewDidLoad {
     [super viewDidLoad];
     _cellTextArray = @[ @"扫码连接", @"输入连接" ];
     self.tableView.rowHeight = 50;
 }
 
+#pragma mark - delegate&datasouse
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 2;
 }

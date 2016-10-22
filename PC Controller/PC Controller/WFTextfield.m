@@ -65,7 +65,7 @@
 }
 #pragma mark - delegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSLog(@"%@",textField.text);
+    self.inputFinished(textField.text);
     return YES;
 }
 @end

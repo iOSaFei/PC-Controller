@@ -10,4 +10,6 @@
 
 @interface WFTextfield : UIView
 
+@property (nonatomic, strong) void (^inputFinished) (NSString *string);
+
 @end

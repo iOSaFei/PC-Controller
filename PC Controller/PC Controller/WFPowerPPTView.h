@@ -10,7 +10,8 @@
 
 @interface WFPowerPPTView : UIView
 
+@property (nonatomic, copy) void (^ppdidSelectItem)(NSInteger index);
+
 - (instancetype)initWithFrame:(CGRect)frame tittle:(NSArray<NSString *> *)tittleArray;
 - (void)apperAnimation;
-- (void)disapperAnimation;
 @end
