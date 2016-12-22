@@ -11,6 +11,7 @@
 #import "WFPopController.h"
 #import "WFQuickStartController.h"
 #import "WFShootScreenController.h"
+#import "WFChatViewController.h"
 #import "WFGestureView.h"
 #import "WFFunction.h"
 #import "WFTextfield.h"
@@ -18,13 +19,16 @@
 #import "WFLightnessAndVolume.h"
 #import "SVProgressHUD.h"
 #import "WFCmdSocketModel.h"
+#import "WFFileSocketModel.h"
 #import "WFJsonModel.h"
 #import "NSObject+GetIP.h"
 #import "NSDictionary+CmdDictionary.h"
 #import "YXEasing.h"
 
 @interface WFControlController () <UIPopoverPresentationControllerDelegate, FunctionEventDelegate>
-
+{
+    NSString *IPStr;
+}
 @property (nonatomic, strong) WFQuickStartController *quickStartController;
 @property (nonatomic, strong) WFGestureView          *gestureView;
 @property (nonatomic, strong) WFFunction             *functionCollectionView;
@@ -43,11 +47,13 @@
     [self changeNavigationBar];
     [self addFunctionCollectionView];
 }
+
 #pragma mark - NavigationBar 
 - (void)changeNavigationBar {
     self.navigationController.navigationBar.translucent  = NO;
-    self.navigationController.navigationBar.clipsToBounds=YES;
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    
     [rightButton setImage:[UIImage imageNamed:@"connect"]
                  forState:UIControlStateNormal];
     rightButton.frame = CGRectMake(0, 0, 25, 25);
@@ -55,6 +61,7 @@
     UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     self.navigationItem.rightBarButtonItem = rightButtonItem;
 }
+
 #pragma mark - view
 - (void)addFunctionCollectionView {
     self.view.backgroundColor = [UIColor whiteColor];
@@ -72,6 +79,7 @@
     line.backgroundColor = kMainColor.CGColor;
     [self.view.layer addSublayer:line];
 }
+
 #pragma mark - lazyLoad
 - (WFTextfield *)textField {
     if (!_textField) {
@@ -80,42 +88,42 @@
         [[WFTextfield alloc] initWithFrame:CGRectMake(0, -kWindowHeight, kWindowWidth, kWindowHeight)];
         _textField.inputFinished = ^(NSString *string) {
             [weakself linkToSetver:string];
+            [weakself performSelectorOnMainThread:@selector(textFiledRemove)
+                                       withObject:nil
+                                    waitUntilDone:YES];
         };
         [self.view addSubview:_textField];
     }
     return _textField;
 }
+- (void)textFiledRemove {
+    [_textField removeSelf];
+}
+
 - (WFGestureView *)gestureView {
     if (!_gestureView) {
         WS(weakself);
         _gestureView = [[WFGestureView alloc] initWithFrame:self.view.frame];
         _gestureView.handelGesture = ^(NSDictionary *dictionary) {
-            [weakself sendCmdWithDictionary:dictionary];
+            WFCmdSocketModel *cmdSocketModel = [WFCmdSocketModel cmdSharedInstance];
+            if (cmdSocketModel.cmdSocketOnline) {
+                [weakself sendCmdWithDictionary:dictionary];
+            }
         };
     }
     return _gestureView;
 }
+
 - (WFPowerPPTView *)PPTView {
     if (!_PPTView) {
         WS(weakself);
         NSArray *tittleArray = @[ @"全屏", @"下一页", @"上一页", @"结束"];
+        NSArray *valueArray = @[ @"17", @"12", @"13", @"18"];
         _PPTView = [[WFPowerPPTView alloc] initWithFrame:CGRectMake(kWindowWidth, 0, kWindowWidth - 100, 110) tittle:tittleArray];
         _PPTView.ppdidSelectItem = ^(NSInteger row) {
             NSDictionary *dictionary = nil;
-            switch (row) {
-                case 0:
-                    dictionary = [NSDictionary cmdDictionaryWithValue:@"17" key:@"remote"];
-                    break;
-                case 1:
-                    dictionary = [NSDictionary cmdDictionaryWithValue:@"12" key:@"remote"];
-                    break;
-                case 2:
-                    dictionary = [NSDictionary cmdDictionaryWithValue:@"13" key:@"remote"];
-                    break;
-                case 3:
-                    dictionary = [NSDictionary cmdDictionaryWithValue:@"18" key:@"remote"];
-                    break;
-            }
+            NSString *value = valueArray[row];
+            dictionary = [NSDictionary cmdDictionaryWithValue:value key:@"remote"];
             [weakself sendCmdWithDictionary:dictionary];
         };
         [self.view addSubview:_PPTView];
@@ -123,6 +131,7 @@
     [self.view bringSubviewToFront:_PPTView];
     return _PPTView;
 }
+
 - (WFPowerPPTView *)powerView {
     if (!_powerView) {
         WS(weakself);
@@ -130,20 +139,8 @@
         _powerView = [[WFPowerPPTView alloc] initWithFrame:CGRectMake(kWindowWidth, 0, kWindowWidth - 100, 110) tittle:tittleArray];
         _powerView.ppdidSelectItem = ^(NSInteger row) {
             NSDictionary *dictionary = nil;
-            switch (row) {
-                case 0:
-                    dictionary = [NSDictionary cmdDictionaryWithValue:@"1" key:@"power"];
-                    break;
-                case 1:
-                    dictionary = [NSDictionary cmdDictionaryWithValue:@"2" key:@"power"];
-                    break;
-                case 2:
-                    dictionary = [NSDictionary cmdDictionaryWithValue:@"3" key:@"power"];
-                    break;
-                case 3:
-                    dictionary = [NSDictionary cmdDictionaryWithValue:@"4" key:@"power"];
-                    break;
-            }
+            NSString *valueStr = [NSString stringWithFormat:@"%ld",(row + 1)];
+            dictionary = [NSDictionary cmdDictionaryWithValue:valueStr key:@"power"];
             [weakself sendCmdWithDictionary:dictionary];
         };
         [self.view addSubview:_powerView];
@@ -151,12 +148,14 @@
     [self.view bringSubviewToFront:_powerView];
     return _powerView;
 }
+
 - (WFQuickStartController *)quickStartController {
     if (!_quickStartController) {
         _quickStartController = [[WFQuickStartController alloc] init];
     }
     return _quickStartController;
 }
+
 - (WFLightnessAndVolume *)lightAndVolume {
     if (!_lightAndVolume) {
         WS(weakself);
@@ -174,6 +173,7 @@
     [self.view bringSubviewToFront:_lightAndVolume];
     return _lightAndVolume;
 }
+
 #pragma mark - buttonEvent
 - (void)connectToServer {
     WFPopController *popController = [[WFPopController alloc] init];
@@ -203,6 +203,7 @@
     };
     [self presentViewController:popController animated:YES completion:nil];
 }
+
 #pragma mark - delegate
 - (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller
 {
@@ -220,6 +221,7 @@
 - (void)voiceFunction {
     
 }
+
 - (void)quickStart {
     [self addChildViewController:self.quickStartController];
     [self.view addSubview:self.quickStartController.view];
@@ -234,38 +236,46 @@
     } completion:^(BOOL finished) {
     }];
 }
+
 - (void)PPTFunction {
     [self.PPTView apperAnimation];
 }
+
 - (void)shotScreen {
     WFShootScreenController *shootScreen = [[WFShootScreenController alloc] init];
     [self.navigationController pushViewController:shootScreen animated:YES];
 }
+
 - (void)distanceDestop {
     
 }
+
 - (void)lightnessAndVolume {
     [self.lightAndVolume showWithDuration:0.5];
 }
+
 - (void)powerFunction {
     [self.powerView apperAnimation];
 }
+
 - (void)chatFunction {
-    
+    WFChatViewController *chatViewController =\
+    [[WFChatViewController alloc] init];
+    [self.navigationController pushViewController:chatViewController animated:YES];
 }
+
 #pragma mark - bolok_back
 - (void)connectToServerWithIP:(NSString *)IPString {
     [self linkToSetver:IPString];
 }
-#pragma mark sendCmd
 - (void)linkToSetver:(NSString *)IPString {
+    IPStr = IPString;
     WFCmdSocketModel *cmdSocketModel = [WFCmdSocketModel cmdSharedInstance];
     __weak __typeof(&*cmdSocketModel)weakCmd = cmdSocketModel;
     cmdSocketModel.cmdConnectSuccess = ^ {
         [SVProgressHUD showSuccessWithStatus:@"连接成功！"];
         NSString *IPString = [NSObject deviceIPAdress];
         NSDictionary *dictionary = [NSDictionary cmdDictionaryWithValue:IPString key:@"link"];
-        NNSLog(@"%@",IPString);
         NSString *jsonString = [WFJsonModel jsonString:dictionary];
         [weakCmd sendCmd:jsonString];
     };
@@ -278,11 +288,19 @@
         }
     });
 }
+
+#pragma mark - commonFunctiom
 - (void)sendCmdWithDictionary:(NSDictionary *)dictionary {
     WFCmdSocketModel *cmdSocketModel = [WFCmdSocketModel cmdSharedInstance];
-    NSString *jsonString = [WFJsonModel jsonString:dictionary];
-    [cmdSocketModel sendCmd:jsonString];
+    if (!cmdSocketModel.cmdSocketOnline) {
+        [SVProgressHUD showErrorWithStatus:@"请先将手机与电脑连接"];
+        [self connectToServer];
+    } else {
+        NSString *jsonString = [WFJsonModel jsonString:dictionary];
+        [cmdSocketModel sendCmd:jsonString];
+    }
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

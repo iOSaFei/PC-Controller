@@ -34,6 +34,7 @@
 		454F38A91DA4FF15008F8E33 /* WFLightnessAndVolume.m in Sources */ = {isa = PBXBuildFile; fileRef = 454F38A81DA4FF15008F8E33 /* WFLightnessAndVolume.m */; };
 		4550E6CE1D92885F00DDCDF0 /* WFQuickStartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4550E6CD1D92885F00DDCDF0 /* WFQuickStartController.m */; };
 		4558B8651DAFD75500F8870E /* WFJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4558B8641DAFD75500F8870E /* WFJsonModel.m */; };
+		4575B06F1DFD298B005E367C /* WFChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4575B06E1DFD298A005E367C /* WFChatViewController.m */; };
 		4587EF061DA4EAF000800A06 /* WFQuickStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4587EF051DA4EAF000800A06 /* WFQuickStartView.m */; };
 		45A145771DA60F50008D4C19 /* WFSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A145741DA60F50008D4C19 /* WFSlider.m */; };
 		45A145781DA60F50008D4C19 /* WFPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A145761DA60F50008D4C19 /* WFPopView.m */; };
@@ -47,6 +48,7 @@
 		45E647611DA689AB00659761 /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = 45E647571DA689AB00659761 /* qrspec.c */; };
 		45E647621DA689AB00659761 /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = 45E647591DA689AB00659761 /* rscode.c */; };
 		45E647631DA689AB00659761 /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = 45E6475B1DA689AB00659761 /* split.c */; };
+		45EDCA731DBB3A0F00403D74 /* WFFileSocketModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EDCA721DBB3A0F00403D74 /* WFFileSocketModel.m */; };
 		45FB86291D8ABB1700B8B4A6 /* WFPowerPPTView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FB86281D8ABB1700B8B4A6 /* WFPowerPPTView.m */; };
 		45FF300F1DB10A0500E54994 /* WFGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FF300E1DB10A0500E54994 /* WFGestureView.m */; };
 		D1B8C0092100A9C1B8F4A337 /* libPods-PC Controller.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CD90A47CC328591DD092EC8 /* libPods-PC Controller.a */; };
@@ -124,6 +126,8 @@
 		4550E6CD1D92885F00DDCDF0 /* WFQuickStartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFQuickStartController.m; sourceTree = "<group>"; };
 		4558B8631DAFD75500F8870E /* WFJsonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFJsonModel.h; sourceTree = "<group>"; };
 		4558B8641DAFD75500F8870E /* WFJsonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFJsonModel.m; sourceTree = "<group>"; };
+		4575B06D1DFD298A005E367C /* WFChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFChatViewController.h; sourceTree = "<group>"; };
+		4575B06E1DFD298A005E367C /* WFChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFChatViewController.m; sourceTree = "<group>"; };
 		4587EF041DA4EAF000800A06 /* WFQuickStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFQuickStartView.h; sourceTree = "<group>"; };
 		4587EF051DA4EAF000800A06 /* WFQuickStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFQuickStartView.m; sourceTree = "<group>"; };
 		45A145731DA60F50008D4C19 /* WFSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFSlider.h; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 		45E6475A1DA689AB00659761 /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
 		45E6475B1DA689AB00659761 /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
 		45E6475C1DA689AB00659761 /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
+		45EDCA711DBB3A0F00403D74 /* WFFileSocketModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFFileSocketModel.h; sourceTree = "<group>"; };
+		45EDCA721DBB3A0F00403D74 /* WFFileSocketModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFFileSocketModel.m; sourceTree = "<group>"; };
 		45FB86271D8ABB1700B8B4A6 /* WFPowerPPTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFPowerPPTView.h; sourceTree = "<group>"; };
 		45FB86281D8ABB1700B8B4A6 /* WFPowerPPTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WFPowerPPTView.m; sourceTree = "<group>"; };
 		45FF300D1DB10A0500E54994 /* WFGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WFGestureView.h; sourceTree = "<group>"; };
@@ -289,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				4530DB8A1DB0849200F5C9A2 /* Category */,
-				4558B8621DAFD72E00F8870E /* Model */,
 				45311E291D782C0B00B8E34F /* Controller */,
 				45311E2A1D782C2500B8E34F /* View */,
 			);
@@ -334,6 +339,7 @@
 		45311E291D782C0B00B8E34F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4558B8621DAFD72E00F8870E /* Model */,
 				45311E141D781D5D00B8E34F /* WFControlController.h */,
 				45311E151D781D5D00B8E34F /* WFControlController.m */,
 				453A1DF81D88298500F51191 /* WFPopController.h */,
@@ -342,6 +348,8 @@
 				4550E6CD1D92885F00DDCDF0 /* WFQuickStartController.m */,
 				450CC4B21DB20B8E00EC1F71 /* WFShootScreenController.h */,
 				450CC4B31DB20B8E00EC1F71 /* WFShootScreenController.m */,
+				4575B06D1DFD298A005E367C /* WFChatViewController.h */,
+				4575B06E1DFD298A005E367C /* WFChatViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -385,6 +393,8 @@
 			children = (
 				454A2A021DABD13C000E89BB /* WFCmdSocketModel.h */,
 				454A2A031DABD13C000E89BB /* WFCmdSocketModel.m */,
+				45EDCA711DBB3A0F00403D74 /* WFFileSocketModel.h */,
+				45EDCA721DBB3A0F00403D74 /* WFFileSocketModel.m */,
 			);
 			name = SocketModel;
 			sourceTree = "<group>";
@@ -456,12 +466,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45311E051D77CEDD00B8E34F /* Build configuration list for PBXNativeTarget "PC Controller" */;
 			buildPhases = (
-				114FEE25BF744272575E575B /* 📦 Check Pods Manifest.lock */,
+				114FEE25BF744272575E575B /* [CP] Check Pods Manifest.lock */,
 				45311DD11D77CEDC00B8E34F /* Sources */,
 				45311DD21D77CEDC00B8E34F /* Frameworks */,
 				45311DD31D77CEDC00B8E34F /* Resources */,
-				0A98A34DF1EE7E8E6CE0A5E5 /* 📦 Embed Pods Frameworks */,
-				9798CE2953961A9C4E24A283 /* 📦 Copy Pods Resources */,
+				0A98A34DF1EE7E8E6CE0A5E5 /* [CP] Embed Pods Frameworks */,
+				9798CE2953961A9C4E24A283 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -476,12 +486,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45311E081D77CEDD00B8E34F /* Build configuration list for PBXNativeTarget "PC ControllerTests" */;
 			buildPhases = (
-				131FFD4D57C85B11CC399A83 /* 📦 Check Pods Manifest.lock */,
+				131FFD4D57C85B11CC399A83 /* [CP] Check Pods Manifest.lock */,
 				45311DED1D77CEDD00B8E34F /* Sources */,
 				45311DEE1D77CEDD00B8E34F /* Frameworks */,
 				45311DEF1D77CEDD00B8E34F /* Resources */,
-				8F9573560BD92CEDF36C9393 /* 📦 Embed Pods Frameworks */,
-				85788247BDD00CCC0835CCC7 /* 📦 Copy Pods Resources */,
+				8F9573560BD92CEDF36C9393 /* [CP] Embed Pods Frameworks */,
+				85788247BDD00CCC0835CCC7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -497,11 +507,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45311E0B1D77CEDD00B8E34F /* Build configuration list for PBXNativeTarget "PC ControllerUITests" */;
 			buildPhases = (
-				9E5E75C90CB5F48AB5DFCB2B /* 📦 Check Pods Manifest.lock */,
+				9E5E75C90CB5F48AB5DFCB2B /* [CP] Check Pods Manifest.lock */,
 				45311DF81D77CEDD00B8E34F /* Sources */,
 				45311DF91D77CEDD00B8E34F /* Frameworks */,
 				45311DFA1D77CEDD00B8E34F /* Resources */,
-				0739B0FD7D12458E02630F00 /* 📦 Copy Pods Resources */,
+				0739B0FD7D12458E02630F00 /* [CP] Copy Pods Resources */,
+				0D8F24E8F7940164E394A9FA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -584,14 +595,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0739B0FD7D12458E02630F00 /* 📦 Copy Pods Resources */ = {
+		0739B0FD7D12458E02630F00 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,14 +610,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PC ControllerUITests/Pods-PC ControllerUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		0A98A34DF1EE7E8E6CE0A5E5 /* 📦 Embed Pods Frameworks */ = {
+		0A98A34DF1EE7E8E6CE0A5E5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,44 +625,59 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PC Controller/Pods-PC Controller-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		114FEE25BF744272575E575B /* 📦 Check Pods Manifest.lock */ = {
+		0D8F24E8F7940164E394A9FA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PC ControllerUITests/Pods-PC ControllerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		131FFD4D57C85B11CC399A83 /* 📦 Check Pods Manifest.lock */ = {
+		114FEE25BF744272575E575B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		85788247BDD00CCC0835CCC7 /* 📦 Copy Pods Resources */ = {
+		131FFD4D57C85B11CC399A83 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		85788247BDD00CCC0835CCC7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,14 +685,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PC ControllerTests/Pods-PC ControllerTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8F9573560BD92CEDF36C9393 /* 📦 Embed Pods Frameworks */ = {
+		8F9573560BD92CEDF36C9393 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,14 +700,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PC ControllerTests/Pods-PC ControllerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9798CE2953961A9C4E24A283 /* 📦 Copy Pods Resources */ = {
+		9798CE2953961A9C4E24A283 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,19 +715,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PC Controller/Pods-PC Controller-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9E5E75C90CB5F48AB5DFCB2B /* 📦 Check Pods Manifest.lock */ = {
+		9E5E75C90CB5F48AB5DFCB2B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -712,6 +738,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4587EF061DA4EAF000800A06 /* WFQuickStartView.m in Sources */,
+				4575B06F1DFD298B005E367C /* WFChatViewController.m in Sources */,
 				45E647611DA689AB00659761 /* qrspec.c in Sources */,
 				45A145771DA60F50008D4C19 /* WFSlider.m in Sources */,
 				453A1E031D88393F00F51191 /* easing.c in Sources */,
@@ -746,6 +773,7 @@
 				453A1E041D88393F00F51191 /* YXEasing.m in Sources */,
 				45311E161D781D5D00B8E34F /* WFControlController.m in Sources */,
 				45311E281D782C0400B8E34F /* WFFunction.m in Sources */,
+				45EDCA731DBB3A0F00403D74 /* WFFileSocketModel.m in Sources */,
 				4550E6CE1D92885F00DDCDF0 /* WFQuickStartController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

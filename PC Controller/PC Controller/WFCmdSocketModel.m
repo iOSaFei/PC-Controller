@@ -32,8 +32,9 @@
 }
 
 - (void)initCmdSocket:(NSString *)ipString withPort:(int)port{
-    _cmdAsyncSocket = [[AsyncSocket alloc] initWithDelegate:self];
-    NSError *error = nil;
+    _cmdSocketOnline = NO;
+    _cmdAsyncSocket  = [[AsyncSocket alloc] initWithDelegate:self];
+    NSError *error   = nil;
     [_cmdAsyncSocket connectToHost:ipString onPort:port error:&error];
 }
 - (void)sendCmd:(NSString *)cmdString {
@@ -42,9 +43,10 @@
 }
 //当成功连接到服务器时激发该方法
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port {
-    _cmdSocketOnline = YES;
-    _firstReceived   = YES;
-    _cutByUser       = NO;
+    self.hostIPString = host;
+    _cmdSocketOnline  = YES;
+    _firstReceived    = YES;
+    _cutByUser        = NO;
     _cmdConnectSuccess();
     [_cmdAsyncSocket readDataWithTimeout:-1 tag:0];
 }
@@ -58,20 +60,16 @@
         NNSLog(@"%@",error);
     }
     if (dictionary) {
-        NNSLog(@"%@",dictionary);
+        self.cmdReceivedData(dictionary);
     }
     [_cmdAsyncSocket readDataWithTimeout:-1 tag:0];
 }
 - (void)onSocketDidDisconnect:(AsyncSocket *)sock {
-    if (!_cutByUser) {
-        _cmdSocketOnline = NO;
-        _cutByUser = NO;
-    }
+    _cmdSocketOnline = NO;
 }
 - (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag {
 }
 -(void)cutOffCmdSocket{
-    _cmdSocketOnline  = NO;
     _cutByUser = YES;
     [_cmdAsyncSocket disconnect];
 }

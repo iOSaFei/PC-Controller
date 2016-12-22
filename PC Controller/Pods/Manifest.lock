@@ -8,17 +8,20 @@ PODS:
   - CocoaAsyncSocket/RunLoop (7.4.3)
   - Masonry (1.0.0)
   - SVProgressHUD (2.0.3)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - CocoaAsyncSocket
   - Masonry
   - SVProgressHUD
+  - YYModel
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
   Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: b807bbe640058d96af25561d6035cd3eb94e4312
+PODFILE CHECKSUM: fa793d5257590b6c34618f60424534f2667b5119
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.1

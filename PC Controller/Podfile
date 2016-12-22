@@ -20,4 +20,5 @@ target 'PC Controller' do
   pod 'CocoaAsyncSocket'
   pod 'Masonry'
   pod 'SVProgressHUD'
+  pod 'YYModel'
 end

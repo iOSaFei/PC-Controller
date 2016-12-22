@@ -7,6 +7,11 @@
 //
 
 #import "WFShootScreenController.h"
+#import "SVProgressHUD.h"
+#import "NSDictionary+CmdDictionary.h"
+#import "WFCmdSocketModel.h"
+#import "WFFileSocketModel.h"
+#import "WFJsonModel.h"
 
 @interface WFShootScreenController () <UIScrollViewDelegate>
 {
@@ -20,6 +25,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupViews];
+    [self sendCmd];
 }
 - (void)setupViews {
     CGFloat height = kWindowWidth*9/16;
@@ -39,6 +45,32 @@
     scrollView.maximumZoomScale = 2.0;
     // 设置最小伸缩比例
     scrollView.minimumZoomScale = 0.2;
+}
+- (void)sendCmd {
+    [self requestImage];
+    NSDictionary *dictionary = [NSDictionary cmdDictionaryWithValue:@"1" key:@"screenshot"];
+    NSString *jsonString = [WFJsonModel jsonString:dictionary];
+    WFCmdSocketModel *cmdSocketModel = [WFCmdSocketModel cmdSharedInstance];
+    cmdSocketModel.cmdReceivedData = ^(NSDictionary *dic) {
+        if (dic[@"parameter"]) {
+            
+        } else {
+            [SVProgressHUD showErrorWithStatus:@"截屏失败，请重新截屏！"];
+        }
+    };
+    [cmdSocketModel sendCmd:jsonString];
+}
+- (void) requestImage {
+    WFFileSocketModel *fileSocketModel = [WFFileSocketModel fileSharedInstance];
+    fileSocketModel.receiveFinished = ^(NSMutableData *data) {
+        NNSLog(@"%@",[NSThread currentThread]);
+        [self performSelectorOnMainThread:@selector(loadImage:) withObject:data waitUntilDone:NO];
+    };
+    [fileSocketModel initFileSocket:nil withPort:59672];
+}
+- (void)loadImage:(NSMutableData *)data {
+    UIImage *image   = [[UIImage alloc] initWithData:data];
+    _imageView.image = image;
 }
 #pragma mark - UIScrollView 的 代理方法
 #pragma mark 这个方法返回的控件就能进行捏合手势缩放操作

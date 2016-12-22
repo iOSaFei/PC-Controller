@@ -10,8 +10,10 @@
 
 @interface WFCmdSocketModel : NSObject
 
+@property (nonatomic, strong) NSString *hostIPString;
 @property (nonatomic, assign) BOOL cmdSocketOnline;
 @property (nonatomic, copy)   void (^cmdConnectSuccess)();
+@property (nonatomic, copy)   void (^cmdReceivedData)(NSDictionary *dic);
 
 + (instancetype)cmdSharedInstance;
 - (void)initCmdSocket:(NSString *)ipString withPort:(int)port;

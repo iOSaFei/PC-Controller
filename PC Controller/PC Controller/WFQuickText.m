@@ -24,6 +24,8 @@
         self.delegate        = self;
         self.dataSource      = self;
         self.rowHeight       = 30;
+        self.layer.cornerRadius  = 20;
+        self.layer.masksToBounds = YES;
     }
     return self;
 }
