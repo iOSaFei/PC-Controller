@@ -1,0 +1,26 @@
+//
+//  PrefixHeader.pch
+//  西邮快传1.0
+//
+//  Created by iOS 阿飞 on 16/1/26.
+//  Copyright © 2016年 iOS 阿飞. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define kWindowHeight [UIScreen mainScreen].bounds.size.height
+#define kWindowWidth  [UIScreen mainScreen].bounds.size.width
+
+#define kViewHeight ([UIScreen mainScreen].bounds.size.height-self.navigationController.navigationBar.frame.size.height)
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+// tabBar 高度
+#define kTabBarHeight 49.0f
+// 导航栏高度
+#define kNavigatHeight  64.f
+
+
+#endif /* PrefixHeader_pch */
